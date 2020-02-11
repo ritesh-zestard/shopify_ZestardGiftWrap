@@ -1,4 +1,4 @@
-var base_path_giftwrap = "https://zestardshop.com/shopifyapp/zestard_gift_wrap/public/";
+var base_path_giftwrap = "https://shopifydev.anujdalal.com/zestard_gift_wrap/public/";
 var shop = Shopify.shop;
 //if(shop == "empayar-ailyqairy.myshopify.com")
 {

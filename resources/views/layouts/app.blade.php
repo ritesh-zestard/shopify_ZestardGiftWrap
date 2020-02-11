@@ -30,8 +30,9 @@
     <script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
         
         <script>
+        var appKey = "{{ env('SHOPIFY_APP_API_KEY') }}";
         ShopifyApp.init({
-            apiKey: '683afe586e88d50a07a951bb2b89bd4b',
+            apiKey: appKey,
             shopOrigin: '<?php echo "https://" . session('shop') ?>'
         });      
         document.onreadystatechange = function () {
