@@ -6,5 +6,5 @@ echo "{% if template == 'product' %}
 <div class='giftwrap' id='".$id."' page='cart'>
 </div>
 {% endif %}
-<script src='https://shopifydev.anujdalal.com/zestard_gift_wrap/public/js/giftwrap.js'></script>";
+<script src='https://zestardshop.com/shopifyapp/zestard_gift_wrap/js/giftwrap.js'></script>";
 ?>
