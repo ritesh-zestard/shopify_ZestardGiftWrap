@@ -19,6 +19,6 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+        'DonationSave','frontend/dropdown/save','product/update','track_donation','frontend/add_giftwarp','giftwrap_save'
     ];
 }

@@ -1,0 +1,172 @@
+body {
+    background-color: #F4F6F8;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+
+/*Header*/
+
+header {
+    background-color: #F4F6F8;
+    text-align: left;
+    min-height: auto
+}
+
+header+section {
+    margin-top: 0;
+}
+
+.container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1036px;
+    clear: left;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-align: left;
+    padding: 0;
+    margin-bottom: .5rem;
+}
+
+.adjust-margin {
+    margin: 0 2.0rem;
+}
+
+.toc-block h1.toc-title {
+    margin-left: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+.fields-group input[type="text"],
+.fields-group textarea,
+.fields-group select {
+    padding: .5rem 1rem;
+}
+
+section .card.secondary {
+    background-color: #fff;
+}
+
+.card .empty-section {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+.card .empty-section .image-wrapper,
+.card .empty-section .details-wrapper {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 0;
+    margin: 0;
+}
+
+
+/*.card .empty-section .image-wrapper .es-image{
+    margin-top: 0;
+    margin-left: -68%;
+    width: 170%;
+    position: relative;
+    z-index: 0;
+    max-width: none; }*/
+
+
+/*Help Section*/
+
+.section-heading {
+    text-align: left;
+}
+
+.support-info {
+    margin-left: 0;
+}
+
+.support-info li {
+    list-style: none;
+}
+
+.accordion .accordion-head {
+    padding: 2.0rem;
+    margin-bottom: 0;
+    border-bottom: .1rem solid #dfe4e8;
+    outline: none;
+    cursor: pointer;
+}
+
+.accordion .accordion-head.ui-state-active {
+    background-color: #dfe4e8;
+}
+
+.accordion .accordion-desc {
+    padding: 2.0rem;
+    border-bottom: .1rem solid #dfe4e8;
+}
+
+.accordion .accordion-desc img {
+    max-width: 100%;
+}
+
+.accordion .ui-icon {
+    display: block;
+    width: 15px;
+    height: 15px;
+    float: right;
+    color: #000;
+    background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 12'><path fill='rgb(145,158,171)' d='M8,4a1,1,0,0,1,.71.29l5,5a1,1,0,0,1,0,1.41l-5,5a1,1,0,1,1-1.41-1.41L11.59,10,7.29,5.71A1,1,0,0,1,8,4Z' transform='translate(-7 -4)'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
+    transform: rotate(90deg);
+    margin-top: 7px;
+}
+
+.accordion .ui-state-active .ui-icon {
+    transform: rotate(-90deg);
+}
+
+
+/*
+* Donation Dashboard Page
+*/
+
+.adddonation a.btn.btn-primary.button {
+    position: relative;
+    z-index: 9999;
+}
+
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('https://shopifydev.anujdalal.com/zestard_gift_wrap_opt_a/public/image/loader1.gif') 50% 50% no-repeat rgb(249, 249, 249);
+    opacity: .8;
+}
