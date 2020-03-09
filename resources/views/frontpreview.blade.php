@@ -42,6 +42,7 @@
             success: function (data) {
                 setdata = JSON.parse(data);
                 if (setdata) {
+                    debugger
 //                    if (shop_name == "give-personalised-gifts.myshopify.com")
 //                    {
                     $.ajax({
@@ -56,6 +57,7 @@
                             $('.loader').hide();
                         },
                         success: function (data) {
+                            debugger
                             $("#giftwrap_input").next('label');
                             //$("#giftwrap_input").next('label').after("<img class='giftwrap_image' src='" + data + "' width='40' height='40'></img>");
                             $('.show_desc').after("<img class='giftwrap_image' src='" + data + "' width='40' height='40'></img>");
@@ -85,6 +87,7 @@
             }
         });
         if (page == "product") {
+            debugger
             $('button[type=button]').removeAttr('disabled');
             $("#giftwrap_input").click(function () {
                 var gift_message = $('#gift_message_note').val();
@@ -103,10 +106,12 @@
                 button = $(f).find(':submit');
             }
             button.click(function (e) {
+                debugger
                 $('button[type=button]').removeAttr('disabled');
                 var productname = $("[itemprop=name]").text();
                 var giftwrap_variant_id = $('#gift_wrap_variant_id').val();
                 if ($("#giftwrap_input").is(':checked')) {
+                    debugger
                     var gift_message = $('#gift_message_note').val();
                     var note_msg = $('#giftwrap_text_message').val();
                     if (note_msg == '' && gift_message == 1) {
