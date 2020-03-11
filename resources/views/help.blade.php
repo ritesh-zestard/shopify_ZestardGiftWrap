@@ -169,13 +169,18 @@ if(session('shop')){
 <script type="text/javascript">
 ShopifyApp.ready(function() {
         ShopifyApp.Bar.initialize({
-            icon: "",
-            title: '',
+            title: "Help",
             buttons: {
-                secondary: [{
+                secondary: [
+                {
                     label: 'DASHBOARD',
                     href: '{{ url('/dashboard') }}?shop=<?php echo $shop; ?>',
                     loading: true
+                },
+                {
+                  label: 'SETTINGS',
+                  href : '{{ url('/settings') }}?shop=<?php echo $shop; ?>',
+                  loading: true
                 }
             ]
         }

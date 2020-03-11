@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
         <link rel="stylesheet" href="{{ asset('css/giftwrap-custom.css') }}">
         <link rel="stylesheet" href="{{ asset('css/toast/toastr.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,500,600,700&display=swap" rel="stylesheet">
          @yield('pageCss')
 
     </head>

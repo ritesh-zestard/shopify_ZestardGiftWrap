@@ -28,7 +28,8 @@ class callbackController extends Controller {
                 $sh = App::make('ShopifyAPI', ['API_KEY' => $appSetting->api_key, 'API_SECRET' => $appSetting->shared_secret, 'SHOP_DOMAIN' => $shop, 'ACCESS_TOKEN' => $storeDetail->access_token]);
                 if ($storeDetail->charge_id && $storeDetail->charge_id > 0 && $storeDetail->status == "active") {
                     session(['shop' => $shop]);
-                    return redirect()->route('dashboard', ['shop' => $shop]);
+                    return redirect()->route('landingPage', ['shop' => $shop]);
+                    // return redirect()->route('dashboard', ['shop' => $shop]);
                 } else {
                     return redirect()->route('payment_process');
                 }
@@ -56,6 +57,7 @@ class callbackController extends Controller {
                 $charge_status = $storeDetail->status;
                 if (!empty($charge_id) && $charge_id > 0 && $charge_status == "active") {
                     session(['shop' => $shop]);
+
                     return redirect()->route('dashboard', ['shop' => $shop]);
                 } else {
                     return redirect()->route('payment_process');
@@ -360,7 +362,15 @@ class callbackController extends Controller {
             return view('dashboard', array('shopdomain' => $shopDetail, 'data' => '', 'imagedata' => '', 'new_install' => $new_install));
         }
     }
-
+    public function landingPage(Request $request){
+        if (session('shop')) {
+            $shop = session('shop');
+        } else {
+            $shop = $_REQUEST['shop'];
+        }
+        $shopDetail = ShopModel::where('store_name', $shop)->first();
+        return view('landing_page', array('shopdomain' => $shopDetail,'shop' => $shop));
+    }
     public function payment_method(Request $request) {
         $shop = session('shop');
         $appSetting = AppSetting::where('id', 1)->first();

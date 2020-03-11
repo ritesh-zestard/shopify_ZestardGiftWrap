@@ -13,8 +13,8 @@
 
 
 // Callback route
-
-Route::get('dashboard', 'callbackController@dashboard')->name('dashboard');
+Route::get('dashboard', 'callbackController@landingPage')->name('landingPage');
+Route::get('settings', 'callbackController@dashboard')->name('dashboard');
 Route::get('callback', 'callbackController@index')->name('callback');
 Route::get('redirect', 'callbackController@redirect')->name('redirect');
 Route::any('change_currency', 'callbackController@Currency')->name('change_currency');
