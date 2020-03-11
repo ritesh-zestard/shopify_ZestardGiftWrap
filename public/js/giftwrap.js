@@ -61,3 +61,37 @@ $(document).ready(function() {
         }
     }
 });
+$(".cart__remove").click(function(){
+    clearcart();
+});
+ function clearcart(){
+    var page = $('.giftwrap').attr('page');
+    if (page == 'cart') {
+        var my_itmes = '';
+        var items_count = '';
+        $.ajax({
+            type: 'GET',
+            url: 'http://'+shop+'/cart.json',
+            dataType: 'json',
+            success: function(data) { 
+                items_count = data.item_count;
+                my_itmes = data.items;
+                 if (items_count == 2) {
+                    $.each(my_itmes, function( key, value ) {
+                      if (value.vendor == 'zestard-gift-wrap') {
+                          $.ajax({
+                            type: "POST",
+                            url: '/cart/clear.js',
+                            dataType: 'json',
+                            success: function() { 
+                                 location.reload();
+                            }
+                          });
+                      }
+                    });
+                  
+                }
+            }
+        });
+    }
+}

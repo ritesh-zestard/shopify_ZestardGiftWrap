@@ -13,6 +13,34 @@ if(session('shop')){
   $shop = $_REQUEST['shop'];
 }
 ?>
+<header class="headerDiv">
+    <div class="container notification">
+        <div class="adjust-margin">
+            @if(Session::has('success'))
+            <div class="alert success">
+                <dl>
+                    <dt>Success!</dt>
+                    <dd> {!! session('success') !!}</dd>
+                </dl>
+            </div>
+            @endif
+
+            @if(Session::has('error'))
+            <div class="alert error">
+                <dl>
+                    <dt>error!</dt>
+                    <dd> {!! session('error') !!}</dd>
+                </dl>
+            </div>
+            @endif           
+        </div>
+    </div>
+    <div class="container">
+        <div class="adjust-margin toc-block">
+            <h1 class="toc-title">Settings</h1>
+        </div>
+    </div>  
+</header>
 <div class='loader'></div>
 <section>
     <div class="full-width"> 
@@ -103,81 +131,7 @@ if(session('shop')){
             </section>
          </form>
         <br>
-        <article>
-            <div class="column twelve card">
-                <div class="success-copied"></div>
-                <div class="col-md-12 view-shortcode">
-                    <h2>Shortcode</h2>
-                    <textarea id="ticker-shortcode" rows="1" class="short-code"  readonly="">{% include 'giftwrap' %}</textarea>
-                    <button type="button" onclick="copyToClipboard('#ticker-shortcode')" class="btn tooltipped tooltipped-s copyMe"
-                            style="display: block;"><i class="fa fa-check"></i>Copy to clipboard</button>
-                </div>
-                <div class="col-md-12 shorcode_note cartpage">
-                    <h2 class="sub-heading">Where to paste Shortcode?</h2>
-                    <p><b>Step 1</b></p>
-                    <ul>
-                        <li>Check which page you selected above in "Setting Section". </li>
-                    </ul>
-
-                    <p><b>Step 2 </b>If Selected page is <b>Cart Page</b> then,</p>
-                    <ul>              
-                        <li>Copy the Shortcode from above and paste it in <a href="https://<?php echo $shopdomain->domain ?>/admin/themes/current?key=templates/cart.liquid" target="_blank"><b>cart.liquid</b></a>.
-                            <a class="screenshot" href="{{ asset('image/shortcode-paste1.png') }}">
-                                <b>See Example</b>
-                            </a>
-                        </li>
-                        <li>If your theme is section theme then paste it in <a href="https://<?php echo $shopdomain->domain ?>/admin/themes/current?key=sections/cart-template.liquid" target="_blank"><b>cart-template.liquid</b></a>.<a class="screenshot" href="{{ asset('image/shortcode.png') }}"><b> See Example</b></a>
-                        </li>
-                        <li><b>Note: </b>Please paste the shortcode only once.
-                        </li>
-                    </ul>
-
-                    <p><b>Step 3 </b>If Selected page is <b>Product Page</b> then,</p>
-                    <ul>
-                        <li>Copy the Shortcode from above and paste it in <a href="https://<?php echo $shopdomain->domain ?>/admin/themes/current?key=templates/product.liquid" target="_blank"><b>product.liquid</b></a>.<a class="screenshot" href="{{ asset('image/product.png') }}"><b> See Example</b></a></li>
-                        <li>If your theme is section theme then paste it in <a href="https://<?php echo $shopdomain->domain ?>/admin/themes/current?key=sections/product-template.liquid" target="_blank"><b>product-template.liquid</b></a>.<a class="screenshot" href="{{ asset('image/product-template1.png') }}"><b> See Example</b></a></li>
-                        <li><b>Note: </b>Please paste the shortcode only once.</li>
-                    </ul>
-                    <h2 class="heading-text">Do you want us to paste the Shortcode?</h2>  
-                    <div class="cus-row">
-                        <div class="c-7">                                            
-                                <select class="validation form-control select_page cur_point select_template_page" name="select_template_page" id="select_template_page">
-                                        <option value="">Select Template Page</option>
-                                        <option value="1">Cart Page</option>
-                                        <option value="2">Product Page</option>
-                                    </select>
-                        </div>
-                        <div class="c-5">
-                                <button type="button" class="btn btn-primary submit-cart-code" id="shortcode_pase_template" name="BtnPutShortcode"><i class="fa fa-circle-o-notch fa-spin btn-loader-icon-cart" style="display:none;"></i>Put Shortcode in Template</button>                                                            
-                        </div>
-                    </div>
-                    &nbsp;&nbsp;
-                    <p><strong>Note : </strong>Select the page from the option where you want to paste the code then click 'Put Shortcode' and will get your job done.</p>
-
-                    <div style="display: none;">
-                        <p><b>Paste Shortcode in Cart Template</b></p>
-                        <div class="">
-                            <form action="{{ url('snippet-create-cart') }}" id="RemoveCartVariants" name="config" method="post" class="submitForm"> 
-                                <input type="hidden" name="shop" value="<?php echo $shopdomain->domain; ?>" />
-                                {{ csrf_field() }}
-                                <button class="btn btn-primary" type="submit" name="snippet_cart">Paste Shortcode in Cart</button>
-                            </form>
-                        </div>            
-                        <br>
-                
-                        <p><b>Paste Shortcode in Product Template</b></p>
-                        <div class="">
-                            <form action="{{ url('snippet-create-product') }}" id="RemoveProductVariants" name="config" method="post" class="submitForm">
-                                <input type="hidden" name="shop" value="<?php echo $shopdomain->domain; ?>" />
-                                {{ csrf_field() }}
-                                <input type="hidden" name="template_id" class="template_id">
-                                <button class="btn btn-primary" type="submit" name="snippet_product">Paste Shortcode in Product</button>
-                            </form>
-                        </div>
-                </div>
-                </div>         
-            </div>       
-        </article>
+        
     </div>
 </section>
 @endsection
@@ -189,8 +143,7 @@ if(session('shop')){
 <script type="text/javascript">
 ShopifyApp.ready(function() {
         ShopifyApp.Bar.initialize({
-            icon: "",
-            title: '',
+            title: 'Settings',
             buttons: {
                 primary: {
                     label: 'Demo',
@@ -199,6 +152,11 @@ ShopifyApp.ready(function() {
                     }
                 },
                 secondary: [
+                {
+                    label: 'DASHBOARD',
+                    href: '{{ url('/dashboard') }}?shop=<?php echo $shop; ?>',
+                    loading: true
+                } ,
                 {
                     label: 'HELP',
                     href: '{{ url('/help') }}?shop=<?php echo $shop; ?>',
