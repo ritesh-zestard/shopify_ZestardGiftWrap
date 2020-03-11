@@ -7,11 +7,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="{{asset('css/dashboard/uptown.css')}}">
 <link rel="stylesheet" href="{{asset('css/dashboard/custom.css')}}">
-<style type="text/css">
-    button.btn.tooltipped.tooltipped-s {
-        position: absolute !important;
-    }
-</style>
+
 @endsection
 @section('content')
 <main class="full-width easy-donation-main">
@@ -26,7 +22,7 @@
         <section>
             <div class="full-width">
                 <article>
-                    <div class="column twelve card img-padding es-image" style="background-image: url('https://zestardshop.com/shopifyapp/easy_donation/public/image/donation_banner_image.svg');" >
+                    <div class="column twelve card img-padding es-image" style="background-image: url('https://zestardshop.com/shopify-apps/wp-content/uploads/2019/08/gift-wraps-01.svg');  background-size: 36%; background-position: 80% 88%;" >
                         <div class="empty-section">
                             <div class="details-wrapper" data-step="1" data-intro="Please use this feature to enable the effects of this application in your shopify store" data-position='right' data-scrollTo='tooltip'>
                                 <div class="text-wrapper">
