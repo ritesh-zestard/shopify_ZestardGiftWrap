@@ -14,10 +14,12 @@ use DB;
 class FrontController extends Controller {
 
     public function index(Request $request) {
+       
         $sh = App::make('ShopifyAPI');
         $shopDetail = UserSetting::where('store_encrypt', $request->id)->first();        
         $giftWrap = GiftWrapSettings::where('shop_id', $shopDetail->id)->first();
         // check app is enable or disable
+
         if ($giftWrap->status) {
             return view('frontpreview', ['id' => $request->id, 'page' => $request->page]);
         }
@@ -26,6 +28,7 @@ class FrontController extends Controller {
     // Display Gift wrap section in front side
 
     public function frontView(Request $request) {
+        
         $appSetting = AppSetting::where('id', 1)->first();
         $shopName = $request->shop_name;
         $shopDetail = ShopModel::where('store_name', $shopName)->first();
@@ -35,7 +38,13 @@ class FrontController extends Controller {
 		$shopDetail = UserSetting::where('store_encrypt', $request->id)->first();
         $giftWrap = GiftWrapSettings::where('shop_id', $shopDetail->id)->first();
 		$giftWrap->shop_currency = $currency->symbol_html;
-		$giftWrap->save();
+        $giftWrap->save();
+
+        if($shopApi->shop->primary_locale == 'de'){
+            setlocale(LC_MONETARY,"de_DE");
+            $giftWrap->gift_amount = money_format("%!n", $giftWrap->gift_amount);
+        }
+        
         return json_encode($giftWrap);
     }
 

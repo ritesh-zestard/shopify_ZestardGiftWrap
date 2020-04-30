@@ -22,7 +22,7 @@
         <section>
             <div class="full-width">
                 <article>
-                    <div class="column twelve card img-padding es-image" style="background-image: url('https://zestardshop.com/shopify-apps/wp-content/uploads/2019/08/gift-wraps-01.svg');  background-size: 36%; background-position: 80% 88%;" >
+                    <div class="column twelve card img-padding es-image" style="background-image: url('{{asset("image/giftwrap_banner_image-02.svg")}}');  background-size: 100%;" >
                         <div class="empty-section">
                             <div class="details-wrapper" data-step="1" data-intro="Please use this feature to enable the effects of this application in your shopify store" data-position='right' data-scrollTo='tooltip'>
                                 <div class="text-wrapper">

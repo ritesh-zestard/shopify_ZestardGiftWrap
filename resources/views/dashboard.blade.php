@@ -125,7 +125,7 @@ if(session('shop')){
         <section>
         <article>
         <div class="row mb-3 column twelve save-general-setting-btn" id="GifWrapSave">
-            <button class="btn btn-primary submit-loader submit-giftwrap" type="button"><i class="fa fa-circle-o-notch fa-spin btn-loader-icon btn-loader-icon-submit" id="buttonLoader" style="display:none;"></i> Save Setting</button>
+            <button class="btn btn-primary submit-loader submit-giftwrap" type="button"><i class="fa fa-circle-o-notch fa-spin btn-loader-icon btn-loader-icon-submit" id="buttonLoader" style="display:none;"></i> Save Settings</button>
         </div>
         </article>
             </section>

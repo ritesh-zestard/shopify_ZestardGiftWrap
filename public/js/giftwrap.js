@@ -1,9 +1,6 @@
 var base_path_giftwrap = "https://zestardshop.com/shopifyapp/zestard_gift_wrap/public/";
 var shop = Shopify.shop;
-//if(shop == "empayar-ailyqairy.myshopify.com")
-{
-    //alert();
-}
+
 if (!jQuery) {
     function jQuery() {
         return {
@@ -38,9 +35,7 @@ $(document).ready(function() {
 
         var id = $('.giftwrap').attr('id');
         var page = $('.giftwrap').attr('page');
-        if (shop == "empayar-ailyqairy.myshopify.com") {
-            //alert(page);
-        }
+
         if (id) {
             if (shop == "empayar-ailyqairy.myshopify.com") {
                 //alert(id);

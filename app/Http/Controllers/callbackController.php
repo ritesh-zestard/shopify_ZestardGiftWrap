@@ -17,7 +17,7 @@ use Session;
 
 class callbackController extends Controller {
 
-    public $shopArray = array("vijay-test.myshopify.com", "dipal-test.myshopify.com", "ishita-test.myshopify.com", "zankar-test.myshopify.com", 'ankit-test-com.myshopify.com', "bhushantest.myshopify.com","pallavi-test.myshopify.com");
+    public $shopArray = array("vijay-test.myshopify.com", "dipal-test.myshopify.com", "ishita-test.myshopify.com", "zankar-test.myshopify.com", 'ankit-test-com.myshopify.com', "bhushantest.myshopify.com","pallavi-test.myshopify.com","easy-donation.myshopify.com","dikendra-test.myshopify.com");
 
     public function index(Request $request) {
         $appSetting = AppSetting::where('id', 1)->first();
