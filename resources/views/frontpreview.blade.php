@@ -84,7 +84,7 @@
                 }
             }
         });
-        
+
         if (page == "product") {
             $('button[type=button]').removeAttr('disabled');
             $("#giftwrap_input").click(function () {
@@ -117,7 +117,7 @@
                     //  else if (note_msg.length > 150) {
                     //     alert('Not allowed to more than 150 character.');
                     //     return false;
-                    // } 
+                    // }
                     else {
                         var note = $("#giftwrap_text_message").val();
                         if (note == '') {
@@ -144,7 +144,6 @@
                 }
             });
         } else {
-            debugger;
             $("#giftwrap_input").click(function (e) {
                 var gift_message = $('#gift_message_note').val();
                 if (gift_message == 1) {
@@ -163,7 +162,6 @@
         }
 
         if (page == 'cart') {
-            debugger;
             $('input[name=update]').on('click', function (e) {
                 var gift_wrap_variant_id = $('#gift_wrap_variant_id').attr('value');
                 $(".cart__image-wrapper").each(function () {
@@ -186,7 +184,7 @@
         <input type="hidden" name="gift_message_note" id="gift_message_note">
         <input type="hidden" name="gift_wrap_variant_id" id="gift_wrap_variant_id">
         <span class="checkboxFive">
-            <input type="checkbox" name="giftwrap_frontend" id="giftwrap_input">        
+            <input type="checkbox" name="giftwrap_frontend" id="giftwrap_input">
             <label for="giftwrap_input"></label>
         </span>
     </div>
@@ -256,7 +254,7 @@
     .overlay:target {
         visibility: visible;
         opacity: 1;
-    }    
+    }
     #giftwrap_input {
         margin-right: 0px;
         margin-left: 0px;
@@ -270,7 +268,7 @@
     }
     .zt_message_note{
         margin-top: 10px;
-        float: left;        
+        float: left;
     }
     .show_frontend {
         float: left !important;
@@ -343,5 +341,5 @@
         height: 7px;
         left: 3px;
         top: 4px;
-    }    
+    }
 </style>
