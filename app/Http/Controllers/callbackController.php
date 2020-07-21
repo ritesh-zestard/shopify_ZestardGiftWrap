@@ -17,7 +17,7 @@ use Session;
 
 class callbackController extends Controller {
 
-    public $shopArray = array("vijay-test.myshopify.com", "dipal-test.myshopify.com", "ishita-test.myshopify.com", "zankar-test.myshopify.com", 'ankit-test-com.myshopify.com', "bhushantest.myshopify.com","pallavi-test.myshopify.com","easy-donation.myshopify.com","dikendra-test.myshopify.com");
+    public $shopArray = array("vijay-test.myshopify.com", "dipal-test.myshopify.com", "ishita-test.myshopify.com", "zankar-test.myshopify.com", 'ankit-test-com.myshopify.com', "bhushantest.myshopify.com","pallavi-test.myshopify.com","easy-donation.myshopify.com","dikendra-test.myshopify.com","gift-wrap-app.myshopify.com", "kamlesh-test-app.myshopify.com", "bhushan-test-store.myshopify.com", "ztdesign4.myshopify.com");
 
     public function index(Request $request) {
         $appSetting = AppSetting::where('id', 1)->first();
@@ -343,7 +343,9 @@ class callbackController extends Controller {
             $storeDetail = UserSetting::where('store_name', $shop)->first();
 
             $sh = App::make('ShopifyAPI', ['API_KEY' => $appSetting->api_key, 'API_SECRET' => $appSetting->shared_secret, 'SHOP_DOMAIN' => $shop, 'ACCESS_TOKEN' => $storeDetail->access_token]);
+        
             if ($giftWrapSetting->giftwrap_id != NULL) {
+                
                 $product = $sh->call(['URL' => '/admin/products/' . $giftWrapSetting->giftwrap_id . '.json?fields=id,images,title', 'METHOD' => 'GET']);
 
                 $image_data = array();

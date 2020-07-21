@@ -84,6 +84,7 @@
                 }
             }
         });
+        
         if (page == "product") {
             $('button[type=button]').removeAttr('disabled');
             $("#giftwrap_input").click(function () {
@@ -112,10 +113,12 @@
                     if (note_msg == '' && gift_message == 1) {
                         alert('Please enter gift message note');
                         return false;
-                    } else if (note_msg.length > 150) {
-                        alert('Not allowed to more than 150 character.');
-                        return false;
-                    } else {
+                    }
+                    //  else if (note_msg.length > 150) {
+                    //     alert('Not allowed to more than 150 character.');
+                    //     return false;
+                    // } 
+                    else {
                         var note = $("#giftwrap_text_message").val();
                         if (note == '') {
                             note = "Greeting from the Gift Wrap"
@@ -141,7 +144,8 @@
                 }
             });
         } else {
-            $("#giftwrap_input").click(function () {
+            debugger;
+            $("#giftwrap_input").click(function (e) {
                 var gift_message = $('#gift_message_note').val();
                 if (gift_message == 1) {
                     $(".zt_message_note").slideToggle(this.checked);
@@ -159,6 +163,7 @@
         }
 
         if (page == 'cart') {
+            debugger;
             $('input[name=update]').on('click', function (e) {
                 var gift_wrap_variant_id = $('#gift_wrap_variant_id').attr('value');
                 $(".cart__image-wrapper").each(function () {

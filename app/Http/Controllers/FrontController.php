@@ -34,6 +34,7 @@ class FrontController extends Controller {
         $shopDetail = ShopModel::where('store_name', $shopName)->first();
         $sh = App::make('ShopifyAPI', ['API_KEY' => $appSetting->api_key, 'API_SECRET' => $appSetting->shared_secret, 'SHOP_DOMAIN' => $shopName, 'ACCESS_TOKEN' => $shopDetail->access_token]);
         $shopApi = $sh->call(['URL' => '/admin/shop.json', 'METHOD' => 'GET']);
+        
         $currency = Symbol::where('currency_code', $shopApi->shop->currency)->first();
 		$shopDetail = UserSetting::where('store_encrypt', $request->id)->first();
         $giftWrap = GiftWrapSettings::where('shop_id', $shopDetail->id)->first();

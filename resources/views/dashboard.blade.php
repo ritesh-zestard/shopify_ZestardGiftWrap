@@ -64,9 +64,7 @@ if(session('shop')){
                                 <select id="select_page" name="select_page">
                                     <option value="1" {{ ($data->select_page)?'selected':'' }}>Cart Page</option>
                                     <option value="0" {{ (!$data->select_page)?'selected':'' }}>Product Page</option>
-                                    <?php if($shop == "tospitikomas-com.myshopify.com"){ ?>
-                                        <option value="2" {{ ($data->select_page == 2)?'selected':'' }}>Both</option>
-                                   <?php  } ?>
+                                    
                                 </select>
                             </div>
                         </div>
