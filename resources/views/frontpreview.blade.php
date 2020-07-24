@@ -104,6 +104,7 @@
                 button = $(f).find(':submit');
             }
             button.click(function (e) {
+                button = $(this);
                 $('button[type=button]').removeAttr('disabled');
                 var productname = $("[itemprop=name]").text();
                 var giftwrap_variant_id = $('#gift_wrap_variant_id').val();
